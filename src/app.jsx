@@ -65,14 +65,14 @@ export function App() {
   return (
     <main className="w-full min-h-screen flex transition duration-200 ease-in-out">
       <div
-        className={`flex grow flex-col flex-wrap justify-between items-center ${
+        className={`lg:flex grow flex-col flex-wrap justify-between items-center ${
           sizesSidebar ? 'xl:mr-[400px]' : 'mr-0'
         } ${
           infoSidebar ? 'xl:mr-[600px]' : 'mr-0'
         } transition-all duration-400 ease-in-out`}
       >
         <header className="w-full flex justify-between px-4 lg:px-10 py-5">
-          <div className="w-28">
+          <div className="w-20 md:w-28">
             <svg
               className="w-full fill-current"
               viewBox="0 0 1077 241"
@@ -87,21 +87,21 @@ export function App() {
           <div className="flex items-center">
             <button
               onClick={toggleInfoSidebar}
-              className="flex items-center text-gray-500 hover:text-black transform transition
+              className="flex items-center text-sm md:text-base text-gray-500 hover:text-black transform transition
             duration-200 ease-in-out mr-4"
             >
               <p className="font-medium ml-2">About</p>
             </button>
             <button
               onClick={toggleSizesSidebar}
-              className="flex items-center text-gray-500 hover:text-black transform transition
+              className="flex items-center text-sm md:text-base text-gray-500 hover:text-black transform transition
             duration-200 ease-in-out mr-4"
             >
               <p className="font-medium ml-2">Size Reference</p>
             </button>
-            <a className="mr-4" href="#">
+            <a className="mr-4" href="https://github.com/evanspj/px2rem">
               <svg
-                className="w-6 text-gray-500 hover:text-black transform transition duration-200
+                className="w-5 md:w-6 text-gray-500 hover:text-black transform transition duration-200
               ease-in-out"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 48 47"
@@ -118,7 +118,7 @@ export function App() {
             </a>
           </div>
         </header>
-        <div className="max-w-screen-lg lg:grid grid-cols-1 lg:grid-cols-3 gap-x-10 p-4  mt-10 lg:mt-0">
+        <div className="max-w-screen-lg grid grid-cols-1 lg:grid-cols-3 gap-y-6 lg:gap-y-0 lg:gap-x-10 px-8 lg:p-4 mx-auto mt-10 lg:mt-0">
           <Input
             name="base"
             inputValue={baseSize}
@@ -146,7 +146,7 @@ export function App() {
             hasCopyButton
           />
           <div className="w-full lg:col-span-3 flex justify-center">
-            <p className="w-full max-w-lg lg:text-2xl font-semibold text-center mt-24">
+            <p className="w-full max-w-lg lg:text-2xl font-semibold text-center mt-6 mb-10 lg:mt-24">
               Type in a px or rem value and watch it convert in real-time.
               Enjoy!
             </p>
@@ -160,7 +160,10 @@ export function App() {
             </a>
           </p>
           <p>
-            <a className="underline text-xs" href="">
+            <a
+              className="underline text-xs"
+              href="https://github.com/evanspj/px2rem/blob/main/LICENSE"
+            >
               MIT License
             </a>{' '}
           </p>

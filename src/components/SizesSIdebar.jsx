@@ -35,14 +35,12 @@ const sizes = [
 export default function SizesSidebar({ close, sizesSidebar }) {
   return (
     <aside
-      className={`fixed top-0 bottom-0 right-0 w-[400px] h-screen bg-white border-l-2 border-gray-100 ${
-        sizesSidebar
-          ? 'translate-x-0'
-          : 'translate-x-full xl:translate-x-[400px]'
+      className={`fixed top-0 bottom-0 right-0 w-full xl:w-[400px] h-screen bg-white border-l-2 border-gray-100 ${
+        sizesSidebar ? 'translate-x-0' : 'translate-x-full'
       } transition-all duration-400 ease-in-out `}
     >
       <div class="relative px-6 pt-6 pb-16">
-        <header class="absolute top-4 right-6 w-full flex justify-end z-20">
+        <header class="absolute top-4 right-4 xl:right-6 w-full flex justify-end z-20">
           <button
             onClick={close}
             class="rounded-full bg-gray-100 hover:bg-gray-200 transition duration-200 ease-in-out

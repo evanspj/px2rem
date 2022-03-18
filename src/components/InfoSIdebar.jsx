@@ -1,14 +1,12 @@
 export default function InfoSidebar({ close, infoSidebar }) {
   return (
     <aside
-      className={`fixed top-0 bottom-0 right-0 w-[600px] h-screen bg-white border-l-2 border-gray-100 ${
-        infoSidebar
-          ? 'translate-x-0'
-          : 'translate-x-full xl:translate-x-[600px]'
+      className={`fixed top-0 bottom-0 right-0 w-full xl:w-[600px] h-screen bg-white border-l-2 border-gray-100 ${
+        infoSidebar ? 'translate-x-0' : 'translate-x-full'
       } transition-all duration-400 ease-in-out `}
     >
-      <div class="relative  px-6 pt-12 pb-16">
-        <header class="absolute top-6 right-6 w-full flex justify-end z-20">
+      <div class="relative px-4 xl:px-6 pt-12 pb-16">
+        <header class="absolute top-4 right-4 xl:top-6 xl:right-6 w-full flex justify-end z-20">
           <button
             onClick={close}
             class="rounded-full bg-gray-100 hover:bg-gray-200 transition duration-200 ease-in-out
@@ -65,11 +63,17 @@ export default function InfoSidebar({ close, infoSidebar }) {
                 href="https://tailwindcss.com"
                 class="underline hover:text-violet-300"
               >
-                Tailwindcss
+                Tailwind CSS
               </a>{' '}
-              framework, however wanted something that was a bit more visually
-              appealing for myself. Also, I needed an excuse to work with svelte
-              on a project.
+              framework, however wanted something that was a bit more minimal
+              and ad free. Also, it gave me an excuse to use{' '}
+              <a
+                href="https://vitejs.dev"
+                class="underline hover:text-violet-300"
+              >
+                Vite
+              </a>{' '}
+              in a project.
             </p>
           </section>
         </div>

@@ -30,8 +30,8 @@ export default function Input({
           onInput={onInput}
           onBlur={onBlur}
           className="w-full rounded-xl bg-gray-50 ring-2 ring-gray-100 hover:ring-4 focus:ring-4 border-2 border-transparent
-      focus:border-black outline-none text-center text-6xl placeholder:text-gray-300 transition
-      duration-200 ease-in-out px-4 py-8"
+      focus:border-black outline-none text-center text-2xl lg:text-6xl placeholder:text-gray-300 transition
+      duration-200 ease-in-out p-4 lg:py-8"
           type="number"
           name={name}
         />
