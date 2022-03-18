@@ -155,7 +155,7 @@ export function App() {
         <footer className="w-full flex flex-col items-center mb-2">
           <p className="text-xs">
             Designed and Developed by{' '}
-            <a className="underline" href="">
+            <a className="underline" href="https://evanspj.com">
               Patrick Evans
             </a>
           </p>
