@@ -58,7 +58,7 @@ export default function InfoSidebar({ close, infoSidebar }) {
             </h3>
             <p class="mt-3">
               I found myself utilizing other online resources more frequently
-              while designing projects that aimed to utilize the amazing{' '}
+              while designing projects that aimed to use the amazing{' '}
               <a
                 href="https://tailwindcss.com"
                 class="underline hover:text-violet-300"
