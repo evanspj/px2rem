@@ -39,36 +39,42 @@ export default function SizesSidebar({ close, sizesSidebar }) {
         sizesSidebar ? 'translate-x-0' : 'translate-x-full'
       } transition-all duration-400 ease-in-out `}
     >
-      <div class="relative px-6 pt-6 pb-16">
-        <header class="absolute top-4 right-4 xl:right-6 w-full flex justify-end z-20">
+      <div className="relative px-6 pt-6 pb-16">
+        <header className="absolute top-4 right-4 xl:right-6 w-full flex justify-end z-20">
           <button
             onClick={close}
-            class="rounded-full bg-gray-100 hover:bg-gray-200 transition duration-200 ease-in-out
+            className="rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 transition duration-200 ease-in-out
           p-1"
           >
             <svg
-              class="w-6 fill-current"
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+              className="w-5"
+              viewBox="0 0 24 24"
             >
-              <path
-                fillRule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
+              <g
+                strokeLinecap="square"
+                strokeLinejoin="miter"
+                strokeWidth="2"
+                transform="translate(0.5 0.5)"
+                fill="none"
+                stroke="currentColor"
+                strokeMiterlimit="10"
+              >
+                <line x1="19" y1="5" x2="5" y2="19"></line>{' '}
+                <line x1="19" y1="19" x2="5" y2="5"></line>
+              </g>
             </svg>
           </button>
         </header>
-        <section class="sticky top-6 max-h-[calc(100vh-100px)]  overflow-y-scroll">
-          <h3 class="sticky top-0 bg-white font-bold text-xl">
+        <section className="sticky top-6 max-h-[calc(100vh-100px)]  overflow-y-scroll">
+          <h3 className="sticky top-0 bg-white font-bold text-xl">
             Basic Size Conversions
           </h3>
-          <ul class="list-none  mt-3">
+          <ul className="list-none  mt-3">
             {sizes.map((size, i) => (
               <li
                 key={i}
-                class="grid grid-cols-2 border-b border-gray-300 last:border-none py-1"
+                className="grid grid-cols-2 border-b border-gray-300 last:border-none py-1"
               >
                 <p>{size.px}px</p>
                 <p>{size.rem}rem</p>
