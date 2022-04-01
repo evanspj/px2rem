@@ -1,65 +1,65 @@
-import { useState } from 'preact/hooks'
+import { useState } from 'preact/hooks';
 
-import Input from './components/Input'
-import SizesSidebar from './components/SizesSIdebar'
-import InfoSidebar from './components/InfoSIdebar'
+import Input from './components/Input';
+import SizesSidebar from './components/SizesSIdebar';
+import InfoSidebar from './components/InfoSIdebar';
 
 export function App() {
-  const [baseSize, setBaseSize] = useState(16)
-  const [px, setPx] = useState(null)
-  const [rem, setRem] = useState(null)
-  const [focusedValue, setFocusedValue] = useState(false)
-  const [infoSidebar, setInfoSidebar] = useState(false)
-  const [sizesSidebar, setSizesSidebar] = useState(false)
+  const [baseSize, setBaseSize] = useState(16);
+  const [px, setPx] = useState(null);
+  const [rem, setRem] = useState(null);
+  const [focusedValue, setFocusedValue] = useState(false);
+  const [infoSidebar, setInfoSidebar] = useState(false);
+  const [sizesSidebar, setSizesSidebar] = useState(false);
 
   function toPX(e) {
-    const value = e.target.value
+    const value = e.target.value;
     if (value > 0) {
-      setPx(value * 1)
-      setRem(value / baseSize)
+      setPx(value * 1);
+      setRem(value / baseSize);
     } else {
-      setPx(null)
-      setRem(null)
+      setPx(null);
+      setRem(null);
     }
-    setFocusedValue('px')
+    setFocusedValue('px');
   }
 
   function toREM(e) {
-    const value = e.target.value
+    const value = e.target.value;
     if (value > 0) {
-      setPx(value * baseSize)
-      setRem(value * 1)
+      setPx(value * baseSize);
+      setRem(value * 1);
     } else {
-      setPx(null)
-      setRem(null)
+      setPx(null);
+      setRem(null);
     }
-    setFocusedValue('rem')
+    setFocusedValue('rem');
   }
 
   function updateBase(e) {
-    const value = e.target.value
-    setBaseSize(value)
+    const value = e.target.value;
+    setBaseSize(value);
 
     if (focusedValue == 'px') {
-      setRem(value ? px / value : null)
+      setRem(value ? px / value : null);
     }
     if (focusedValue == 'rem') {
-      setPx(value ? rem * value : null)
+      setPx(value ? rem * value : null);
     }
   }
 
   function toggleInfoSidebar() {
     if (sizesSidebar) {
-      setSizesSidebar(false)
+      setSizesSidebar(false);
     }
-    setInfoSidebar(!infoSidebar)
+    setInfoSidebar(!infoSidebar);
   }
 
   function toggleSizesSidebar() {
     if (infoSidebar) {
-      setInfoSidebar(false)
+      setInfoSidebar(false);
     }
-    setSizesSidebar(!sizesSidebar)
+    setSizesSidebar(!sizesSidebar);
   }
 
   return (
@@ -124,7 +124,7 @@ export function App() {
             inputValue={baseSize}
             onInput={updateBase}
             onBlur={(e) => {
-              !e?.target?.value ? setBaseSize(16) : null
+              !e?.target?.value ? setBaseSize(16) : null;
             }}
           />
           <Input
@@ -132,7 +132,7 @@ export function App() {
             inputValue={px}
             onInput={toPX}
             onBlur={(e) => {
-              !e?.target?.value ? setPx(null) : null
+              !e?.target?.value ? setPx(null) : null;
             }}
             hasCopyButton
           />
@@ -141,13 +141,13 @@ export function App() {
             inputValue={rem}
             onInput={toREM}
             onBlur={(e) => {
-              !e?.target?.value ? setRem(null) : null
+              !e?.target?.value ? setRem(null) : null;
             }}
             hasCopyButton
           />
           <div className="w-full lg:col-span-3 flex justify-center">
             <p className="w-full max-w-lg lg:text-2xl font-semibold text-center mt-6 mb-10 lg:mt-24">
-              Type in a px or rem value and watch it convert in real-time.
+              Type in a pixel or rem value and watch it convert in real-time.
               Enjoy!
             </p>
           </div>
@@ -178,5 +178,5 @@ export function App() {
         close={() => setInfoSidebar(false)}
       />
     </main>
-  )
+  );
 }
