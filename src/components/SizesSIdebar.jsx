@@ -30,7 +30,7 @@ const sizes = [
   { px: 1280, rem: 80 },
   { px: 1440, rem: 90 },
   { px: 1600, rem: 100 },
-]
+];
 
 export default function SizesSidebar({ close, sizesSidebar }) {
   return (
@@ -78,5 +78,5 @@ export default function SizesSidebar({ close, sizesSidebar }) {
         </section>
       </div>
     </aside>
-  )
+  );
 }

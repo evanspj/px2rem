@@ -79,5 +79,5 @@ export default function InfoSidebar({ close, infoSidebar }) {
         </div>
       </div>
     </aside>
-  )
+  );
 }

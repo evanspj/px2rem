@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks'
+import { useState } from 'preact/hooks';
 
 export default function Input({
   name,
@@ -7,15 +7,15 @@ export default function Input({
   onBlur,
   hasCopyButton,
 }) {
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState(false);
   function copy(id) {
-    const el = document.getElementById(id)
-    el.select()
-    document.execCommand('copy')
-    setCopied(true)
+    const el = document.getElementById(id);
+    el.select();
+    document.execCommand('copy');
+    setCopied(true);
     setTimeout(() => {
-      setCopied(false)
-    }, 2000)
+      setCopied(false);
+    }, 2000);
   }
   return (
     <div className="w-full relative box-border grid gap-2 group mb-4 lg:mb-0">
@@ -69,5 +69,5 @@ export default function Input({
         </p>
       )}
     </div>
-  )
+  );
 }
