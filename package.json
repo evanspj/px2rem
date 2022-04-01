@@ -1,7 +1,23 @@
 {
   "name": "px2rem",
+  "description": "A simple pixel to rem converter with a minimal design.",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.2.0",
+  "author": "Patrick Evans <evanspj.dev@gmail.com>",
+  "keywords": [
+    "preact",
+    "vite",
+    "tailwindcss",
+    "converter"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evanspj/px2rem"
+  },
+  "bugs": {
+    "url": "https://github.com/evanspj/px2rem"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
