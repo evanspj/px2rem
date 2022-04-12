@@ -39,8 +39,8 @@ export default function SizesSidebar({ close, sizesSidebar }) {
         sizesSidebar ? 'translate-x-0' : 'translate-x-full'
       } transition-all duration-400 ease-in-out `}
     >
-      <div className="relative px-6 pt-6 pb-16">
-        <header className="absolute top-4 right-4 xl:right-6 w-full flex justify-end z-20">
+      <div className="relative px-6 pt-6 pb-6">
+        <header className="absolute top-4 right-4 xl:top-5 xl:right-6 w-full flex justify-end z-20">
           <button
             onClick={close}
             className="rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 transition duration-200 ease-in-out
@@ -66,15 +66,15 @@ export default function SizesSidebar({ close, sizesSidebar }) {
             </svg>
           </button>
         </header>
-        <section className="sticky top-6 max-h-[calc(100vh-100px)]  overflow-y-scroll">
-          <h3 className="sticky top-0 bg-white font-bold text-xl">
+        <section className="sticky top-6 xl:top-8 max-h-[calc(100vh-50px)]  overflow-y-scroll">
+          <h3 className="sticky top-0 bg-white font-bold text-xl pb-4">
             Basic Size Conversions
           </h3>
-          <ul className="list-none  mt-3">
+          <ul className="list-none mt-3">
             {sizes.map((size, i) => (
               <li
                 key={i}
-                className="grid grid-cols-2 border-b border-gray-300 last:border-none py-1"
+                className="grid grid-cols-2 even:bg-gray-100 rounded-md px-3 py-1"
               >
                 <p>{size.px}px</p>
                 <p>{size.rem}rem</p>
