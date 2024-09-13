@@ -1,12 +1,12 @@
-import { useState } from 'preact/hooks';
+import { useState } from "preact/hooks";
 
-import Input from './components/Input';
-import SizesSidebar from './components/SizesSIdebar';
-import InfoSidebar from './components/InfoSIdebar';
+import Input from "./components/Input";
+import SizesSidebar from "./components/SizesSIdebar";
+import InfoSidebar from "./components/InfoSIdebar";
 
 function NavButton({ children, link, href, onClick }) {
   const buttonClasses =
-    'flex items-center text-sm rounded-md md:text-base  hover:bg-gray-100 transition-all duration-200 ease-in-out px-3 py-1';
+    "flex items-center text-sm rounded-md md:text-base hover:bg-gray-100 transition-all duration-200 ease-in-out px-3 py-1";
 
   if (link) {
     return (
@@ -45,7 +45,7 @@ export function App() {
       setPx(null);
       setRem(null);
     }
-    setFocusedValue('px');
+    setFocusedValue("px");
   }
 
   function toREM(e) {
@@ -57,17 +57,17 @@ export function App() {
       setPx(null);
       setRem(null);
     }
-    setFocusedValue('rem');
+    setFocusedValue("rem");
   }
 
   function updateBase(e) {
     const value = e.target.value;
     setBaseSize(value);
 
-    if (focusedValue == 'px') {
+    if (focusedValue == "px") {
       setRem(value ? px / value : null);
     }
-    if (focusedValue == 'rem') {
+    if (focusedValue == "rem") {
       setPx(value ? rem * value : null);
     }
   }
@@ -87,15 +87,15 @@ export function App() {
   }
 
   return (
-    <main className="w-full min-h-screen flex transition duration-200 ease-in-out">
+    <main className="flex min-h-screen w-full transition duration-200 ease-in-out">
       <div
-        className={`lg:flex grow flex-col flex-wrap justify-between items-center ${
-          sizesSidebar ? 'xl:mr-[400px]' : 'mr-0'
+        className={`grow flex-col flex-wrap items-center justify-between lg:flex ${
+          sizesSidebar ? "xl:mr-[400px]" : "mr-0"
         } ${
-          infoSidebar ? 'xl:mr-[600px]' : 'mr-0'
-        } transition-all duration-400 ease-in-out`}
+          infoSidebar ? "xl:mr-[600px]" : "mr-0"
+        } duration-400 transition-all ease-in-out`}
       >
-        <header className="w-full flex justify-between px-4 lg:px-10 py-5">
+        <header className="flex w-full justify-between px-4 py-5 lg:px-10">
           <div className="w-20 md:w-28">
             <svg
               className="w-full fill-current"
@@ -116,7 +116,7 @@ export function App() {
               <p className="font-medium">Size Reference</p>
             </NavButton>
             <NavButton link href="https://github.com/evanspj/px2rem">
-              <p className="font-medium mr-1">Github</p>
+              <p className="mr-1 font-medium">Github</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -133,7 +133,7 @@ export function App() {
             </NavButton>
           </div>
         </header>
-        <div className="max-w-screen-lg grid grid-cols-1 lg:grid-cols-3 gap-y-6 lg:gap-y-0 lg:gap-x-10 px-8 lg:p-4 mx-auto mt-10 lg:mt-0">
+        <div className="mx-auto mt-10 grid max-w-screen-lg grid-cols-1 gap-y-6 px-8 lg:mt-0 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-0 lg:p-4">
           <Input
             name="base"
             inputValue={baseSize}
@@ -160,16 +160,16 @@ export function App() {
             }}
             hasCopyButton
           />
-          <div className="w-full lg:col-span-3 flex justify-center">
-            <p className="w-full max-w-lg lg:text-2xl font-semibold text-center mt-6 mb-10 lg:mt-24">
+          <div className="flex w-full justify-center lg:col-span-3">
+            <p className="mb-10 mt-6 w-full max-w-lg text-center font-semibold lg:mt-24 lg:text-2xl">
               Type in a pixel or rem value and watch it convert in real-time.
               Enjoy!
             </p>
           </div>
         </div>
-        <footer className="w-full flex flex-col items-center mb-2">
+        <footer className="mb-2 flex w-full flex-col items-center">
           <p className="text-xs">
-            Designed and Developed by{' '}
+            Designed and Developed by{" "}
             <a
               className="underline"
               target="_blank"
@@ -181,13 +181,13 @@ export function App() {
           </p>
           <p>
             <a
-              className="underline text-xs"
+              className="text-xs underline"
               target="_blank"
               rel="noreferrer noopener"
               href="https://github.com/evanspj/px2rem/blob/main/LICENSE"
             >
               MIT License
-            </a>{' '}
+            </a>{" "}
           </p>
         </footer>
       </div>
