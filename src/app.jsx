@@ -32,9 +32,9 @@ export function App() {
   const [baseSize, setBaseSize] = useState(16);
   const [px, setPx] = useState(null);
   const [rem, setRem] = useState(null);
-  const [focusedValue, setFocusedValue] = useState(false);
-  const [infoSidebar, setInfoSidebar] = useState(false);
-  const [sizesSidebar, setSizesSidebar] = useState(false);
+  const [focusedValue, setFocusedValue] = useState(null);
+  const [infoSidebar, setInfoSidebar] = useState(null);
+  const [sizesSidebar, setSizesSidebar] = useState(null);
 
   function toPX(e) {
     const value = e.target.value;
@@ -64,10 +64,10 @@ export function App() {
     const value = e.target.value;
     setBaseSize(value);
 
-    if (focusedValue == "px") {
+    if (focusedValue === "px") {
       setRem(value ? px / value : null);
     }
-    if (focusedValue == "rem") {
+    if (focusedValue === "rem") {
       setPx(value ? rem * value : null);
     }
   }
